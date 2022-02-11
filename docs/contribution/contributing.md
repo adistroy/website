@@ -87,7 +87,7 @@ make helm-chart
 
 Use `KubeBuilder` to generate a CRD YAML file, for example, below command will generate a new kind `dog` under api group `pet`
 ```bash
-kubebuilder create api --group pet --version v1alpha1 --kind dog
+kubebuilder create api --group pet --version v1alpha1 --kind Dog
 ```
 Generate the zz_generated.deepcopy.go file
 ```bash
@@ -98,7 +98,7 @@ Generate the zz_generated.defaults.go file
 ```bash
 go get k8s.io/code-generator/cmd/defaulter-gen
 cd apis/
-defaulter-gen -O zz_generated.defaults -i ./pet/... -h ../hack/boilerplate.go.txt
+defaulter-gen -O zz_generated.defaults -i ./pet/v1alpha1/... -h ../hack/boilerplate.go.txt
 ```
 
 ### Git Preparation (Skip if you are familiar with Git)
